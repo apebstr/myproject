@@ -2,6 +2,8 @@ package members.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
 
+import members.dto.MembersDTO;
+
 public class MembersDaoImp implements MembersDAO {
 	
 	private SqlSessionTemplate sqlSession;
@@ -13,5 +15,12 @@ public class MembersDaoImp implements MembersDAO {
 	public void setSqlSession(SqlSessionTemplate sqlSession) {
 		this.sqlSession = sqlSession;
 	}
+
+	@Override
+	public int join(MembersDTO memDTO) {
+		return sqlSession.insert("members.join", memDTO);
+	}
+
+
 }
 

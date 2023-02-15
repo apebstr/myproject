@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import board.dto.BoardDTO;
+import members.dto.MembersDTO;
 import members.service.MembersService;
 
 // http://localhost:8090/myapp/members/join.do
@@ -24,9 +26,15 @@ public class MembersController {
 	}
 	
 	@RequestMapping(value="/members/join.do", method=RequestMethod.GET)
-	public ModelAndView JoinExecute(ModelAndView mav) {
+	public ModelAndView joinExecute(ModelAndView mav) {
 		mav.setViewName("members/join");
 		return mav;
+	}
+	
+	@RequestMapping(value="/members/join.do", method=RequestMethod.POST)
+	public String joinExecute(MembersDTO memDTO) {
+		memService.joinProcess(memDTO);
+		return "redirect:/index.do";
 	}
 	
 }//MembersController

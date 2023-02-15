@@ -12,6 +12,9 @@ CREATE TABLE membersBasic(
 INSERT INTO membersBasic (memId, memPw, memName, memType, memJoinDate)
 VALUES('mrboo','boo1234567','부승관',1,sysdate);
 
+INSERT INTO membersBasic (memId, memPw, memName, memType, memJoinDate)
+VALUES('suk','suk123','이석민',1, sysdate);
+
 select * from membersBasic;
 
 commit;
