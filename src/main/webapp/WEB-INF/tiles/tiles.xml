@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/WEB-INF/tiles/layout/baselayout.jsp">
+		<put-attribute name="title" value=""/>	
+		<put-attribute name="heading" value=""/>	
+		<put-attribute name="subheading" value=""/>	
+		<put-attribute name="header" value="/WEB-INF/tiles/common/header.jsp"/>	
+		<put-attribute name="content" value=""/>	
+		<put-attribute name="footer" value="/WEB-INF/tiles/common/footer.jsp"/>	
+	</definition>
+	
+	<definition name="index" extends="baseLayout">
+		<put-attribute name="title" value="Main"/>	
+		<put-attribute name="heading" value="WELCOME TO MY SPACE!"/>	
+		<put-attribute name="subheading" value="다양한 정보를 얻어보세요!"/>	
+		<put-attribute name="content" value="/WEB-INF/views/index.jsp"/>	
+	</definition>	
+	
+	<definition name="boardLayout" template="/WEB-INF/tiles/layout/baselayout.jsp">
+		<put-attribute name="title" value=""/>	
+		<put-attribute name="heading" value="WELCOME TO MY BOARD!"/>	
+		<put-attribute name="subheading" value="다양한 정보를 공유해보세요!"/>	
+		<put-attribute name="header" value="/WEB-INF/tiles/common/header.jsp"/>	
+		<put-attribute name="content" value=""/>	
+		<put-attribute name="footer" value="/WEB-INF/tiles/common/footer.jsp"/>	
+	</definition>
+	
+	<definition name="/board/list" extends="boardLayout">
+		<put-attribute name="title" value="Board"/>	
+		<put-attribute name="content" value="/WEB-INF/views/board/list.jsp"/>	
+	</definition>	
+	
+	<definition name="/board/write" extends="boardLayout">
+		<put-attribute name="title" value="Write"/>		
+		<put-attribute name="content" value="/WEB-INF/views/board/write.jsp"/>	
+	</definition>		
+	
+	<definition name="/board/read" extends="boardLayout">
+		<put-attribute name="title" value="Read"/>		
+		<put-attribute name="content" value="/WEB-INF/views/board/read.jsp"/>	
+	</definition>
+
+	<definition name="/board/update" extends="boardLayout">
+		<put-attribute name="title" value="Write"/>		
+		<put-attribute name="content" value="/WEB-INF/views/board/update.jsp"/>	
+	</definition> 
+	
+	<definition name="members/join" extends="baseLayout">
+		<put-attribute name="title" value="Join"/>	
+		<put-attribute name="heading" value="JOIN US!"/>	
+		<put-attribute name="subheading" value="회원가입하여 다양한 정보를 얻어보세요!"/>	
+		<put-attribute name="content" value="/WEB-INF/views/members/join.jsp"/>	
+	</definition>		
+</tiles-definitions>

@@ -1,0 +1,26 @@
+package com.mycompany.myapp;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+/**
+ * Handles requests for the application home page.
+ */
+
+// http://localhost:8090/myapp/home.do
+
+@Controller
+public class HomeController {
+	
+	public HomeController() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@RequestMapping(value="/home.do", method=RequestMethod.GET)
+	public String home() {
+		return "home";
+	}
+	
+}//class HomeController 
